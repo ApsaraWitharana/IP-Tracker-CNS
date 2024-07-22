@@ -38,3 +38,19 @@ This project is licensed under the MIT License.
 - Thanks to [ipapi.co](https://ipapi.co/) for providing the IP location API.
 - Thanks to [OpenWeatherMap](https://openweathermap.org/) for providing the weather data API.
 
+
+
+## Login to system
+![WhatsApp Image 2024-07-22 at 17 39 03_5992fecb](https://github.com/user-attachments/assets/3106236c-1aff-4fa2-ada5-e5e8f36e8359)
+
+## Dashboard
+![WhatsApp Image 2024-07-22 at 17 39 36_b62687b7](https://github.com/user-attachments/assets/d32f1f90-99e8-4d92-a045-f1af24cf5410)
+
+## Weather Details
+![WhatsApp Image 2024-07-22 at 17 40 00_02db331e](https://github.com/user-attachments/assets/5a0f3fca-89bc-458f-90db-64b1620ee33c)
+
+## Ip Tracker Details
+![WhatsApp Image 2024-07-22 at 17 40 19_e0134db7](https://github.com/user-attachments/assets/d6fcec30-327d-429d-96a4-9e04fb606375)
+
+
+
