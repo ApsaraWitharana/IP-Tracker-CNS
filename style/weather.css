@@ -1,0 +1,109 @@
+/* body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+     background-color: rgb(15, 14, 14);
+    font-family: Arial, Helvetica, sans-serif;
+} */
+
+.container {
+    margin-top: 20px;
+    display: grid;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, auto);
+    gap: 20px;
+
+}
+
+.card {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #04044f;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    padding: 20px;
+    text-align: center;
+    margin: auto;
+}
+
+.pic {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 20px;
+
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.name {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+/* responcive */
+
+@media screen and (max-width:575px) {
+
+    .container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+
+    }
+
+}
+
+@media screen and (min-width:575px) and (max-width:767px) {
+
+    .container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+}
+
+@media screen and (min-width:768px) and (max-width:991px) {
+
+    .container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+    }
+
+}
+
+@media screen and (min-width:992px) and (max-width:1199px) {
+
+    .container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+
+    }
+
+}
+
+@media screen and (min-width:1200px) and (max-width:1399px) {
+
+    .container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+
+    }
+
+}
