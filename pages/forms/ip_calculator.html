@@ -65,6 +65,7 @@
             border: none;
             border-radius: 4px;
             cursor: pointer;
+
         }
 
         button:hover {
@@ -88,20 +89,33 @@
             .calculator{
                 display: grid;
                 width: 200px;
-                margin-right:20px;
-                margin-left: 20px;
+                margin-right:10px;
+                margin-left: 10px;
             }
+            input{
+                width: calc(100% - 50px);
+                font-size: 10px;
+            }
+
+
 
         }
 
         @media screen and (min-width:575px) and (max-width:767px) {
 
-            .calculator{
+            .calculator {
                 display: grid;
                 width: 250px;
-                margin-right:200px;
+                margin-right: 200px;
                 margin-left: 200px;
+
             }
+
+            input{
+                width: calc(100% - 40px);
+                font-size: 10px;
+            }
+
 
         }
 
@@ -114,6 +128,13 @@
                 margin-left: 200px;
             }
 
+            input{
+                width: calc(100% - 30px);
+                font-size: 10px;
+            }
+
+
+
         }
 
         @media screen and (min-width:992px) and (max-width:1199px) {
@@ -124,6 +145,12 @@
                 margin-right:250px;
                 margin-left: 250px;
             }
+            input{
+                width: calc(100% - 20px);
+                font-size: 20px;
+            }
+
+
 
         }
 
@@ -136,6 +163,12 @@
                 margin-left: 300px;
 
             }
+            input{
+                width: calc(100% - 20px);
+                font-size: 20px;
+            }
+
+
 
         }
     </style>
