@@ -12,6 +12,78 @@
 
     <link href="../../style/css/vertical-layout-light/style.css" rel="stylesheet">
     <link href="./../../asets/Untitled_design-removebg-preview.png" rel="shortcut icon"/>
+    <style>
+        /*body {*/
+        /*    background-image: url(/assecet/image/network\ imge.jpg);*/
+        /*    object-fit: cover;*/
+        /*    font-family: Arial, sans-serif;*/
+        /*    background-color: #f0f0f0;*/
+        /*    display: flex;*/
+        /*    justify-content: center;*/
+        /*    align-items: center;*/
+        /*    height: 100vh;*/
+        /*    margin: 0;*/
+        /*}*/
+
+        .calculator {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 400px;
+            margin-right:300px;
+            margin-left: 300px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: calc(100% - 20px);
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #063e09;
+
+        }
+
+        #results {
+            margin-top: 20px;
+            text-align: left;
+        }
+        .card{
+            background-color: #a3b7e1;
+            color: black;
+        }
+        .text-success{
+            color: white;
+        }
+    </style>
 </head>
 <body>
 
@@ -341,209 +413,221 @@
             <div class="content-wrapper">
                 <h6>predictions / whether</h6>
                 <div class="row">
-
                     <div class="col-12 grid-margin">
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title">IP Calculator</h4>
-                                <p class="text-success">lets calculate</p>
+                                <p class="text-success" style="color:black;">lets calculate</p>
+                                <div class="calculator">
+                                    <h3>IP Addressing Calculator</h3>
+                                    <div class="input-group">
+                                        <label for="ipAddress">IP Address:</label>
+                                        <input type="text" id="ipAddress" placeholder="Enter IP Address">
+                                    </div>
+                                    <div class="input-group">
+                                        <label for="subnetMask">Subnet Mask (CIDR):</label>
+                                        <input type="text" id="subnetMask" placeholder="Enter Subnet Mask (e.g., 24)">
+                                    </div>
+                                    <button onclick="calculate()">Calculate</button>
+                                    <div id="results"></div>
+                                </div>
                                 <!--                                <img alt="whether report image" id="weather_icon_url">-->
-                                <form class="form-sample">
-                                    <br>
+<!--                                <form class="form-sample">-->
+<!--                                    <br>-->
 
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="form-group row">
-                                                <label class="col-sm-3 col-form-label">CIDR Notation</label>
-                                                <div class="col-sm-9">
-                                                    <input class="form-control" id="cidr_notation" type="text"/>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group row">
-                                                <label class="col-sm-3 col-form-label">Subnet Bits</label>
-                                                <div class="col-sm-9">
-                                                    <input class="form-control" id="subnet_bits" type="text"/>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+<!--                                    <div class="row">-->
+<!--                                        <div class="col-md-6">-->
+<!--                                            <div class="form-group row">-->
+<!--                                                <label class="col-sm-3 col-form-label">CIDR Notation</label>-->
+<!--                                                <div class="col-sm-9">-->
+<!--                                                    <input class="form-control" id="cidr_notation" type="text"/>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                        <div class="col-md-6">-->
+<!--                                            <div class="form-group row">-->
+<!--                                                <label class="col-sm-3 col-form-label">Subnet Bits</label>-->
+<!--                                                <div class="col-sm-9">-->
+<!--                                                    <input class="form-control" id="subnet_bits" type="text"/>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
 
 
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="form-group row">
-                                                <label class="col-sm-3 col-form-label">Subnet Mask</label>
-                                                <div class="col-sm-9">
-                                                    <input class="form-control" id="subnet_mask" type="text"/>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group row">
-                                                <label class="col-sm-3 col-form-label">Wild Car Mask</label>
-                                                <div class="col-sm-9">
-                                                    <input class="form-control" id="wildcard_mask" type="text"/>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="form-group row">
-                                                <label class="col-sm-3 col-form-label">Network Address</label>
-                                                <div class="col-sm-9">
-                                                    <input class="form-control" id="network_address" type="text"/>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group row">
-                                                <label class="col-sm-3 col-form-label">Broadcast Address</label>
-                                                <div class="col-sm-9">
-                                                    <input class="form-control" id="broadcast_address" type="text"/>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="form-group row">
-                                                <label class="col-sm-3 col-form-label">Assignable Hosts</label>
-                                                <div class="col-sm-9">
-                                                    <input class="form-control" id="assignable_hosts" type="text"/>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group row">
-                                                <label class="col-sm-3 col-form-label">First Assignable Host</label>
-                                                <div class="col-sm-9">
-                                                    <input class="form-control" id="first_assignable_host" type="text"/>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="form-group row">
-                                                <label class="col-sm-3 col-form-label">Last Assignable Host</label>
-                                                <div class="col-sm-9">
-                                                    <input class="form-control" id="last_assignable_host" type="text"/>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group row">
-                                                <label class="col-sm-3 col-form-label">Octet 1</label>
-                                                <div class="col-sm-9">
-                                                    <input class="form-control" id="octet_1" type="text"/>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="form-group row">
-                                                <label class="col-sm-3 col-form-label">Octet 2</label>
-                                                <div class="col-sm-9">
-                                                    <input class="form-control" id="octet_2" type="text"/>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group row">
-                                                <label class="col-sm-3 col-form-label">Octet 3</label>
-                                                <div class="col-sm-9">
-                                                    <input class="form-control" id="octet_3" type="text"/>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+<!--                                    <div class="row">-->
+<!--                                        <div class="col-md-6">-->
+<!--                                            <div class="form-group row">-->
+<!--                                                <label class="col-sm-3 col-form-label">Subnet Mask</label>-->
+<!--                                                <div class="col-sm-9">-->
+<!--                                                    <input class="form-control" id="subnet_mask" type="text"/>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                        <div class="col-md-6">-->
+<!--                                            <div class="form-group row">-->
+<!--                                                <label class="col-sm-3 col-form-label">Wild Car Mask</label>-->
+<!--                                                <div class="col-sm-9">-->
+<!--                                                    <input class="form-control" id="wildcard_mask" type="text"/>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    <div class="row">-->
+<!--                                        <div class="col-md-6">-->
+<!--                                            <div class="form-group row">-->
+<!--                                                <label class="col-sm-3 col-form-label">Network Address</label>-->
+<!--                                                <div class="col-sm-9">-->
+<!--                                                    <input class="form-control" id="network_address" type="text"/>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                        <div class="col-md-6">-->
+<!--                                            <div class="form-group row">-->
+<!--                                                <label class="col-sm-3 col-form-label">Broadcast Address</label>-->
+<!--                                                <div class="col-sm-9">-->
+<!--                                                    <input class="form-control" id="broadcast_address" type="text"/>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    <div class="row">-->
+<!--                                        <div class="col-md-6">-->
+<!--                                            <div class="form-group row">-->
+<!--                                                <label class="col-sm-3 col-form-label">Assignable Hosts</label>-->
+<!--                                                <div class="col-sm-9">-->
+<!--                                                    <input class="form-control" id="assignable_hosts" type="text"/>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                        <div class="col-md-6">-->
+<!--                                            <div class="form-group row">-->
+<!--                                                <label class="col-sm-3 col-form-label">First Assignable Host</label>-->
+<!--                                                <div class="col-sm-9">-->
+<!--                                                    <input class="form-control" id="first_assignable_host" type="text"/>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    <div class="row">-->
+<!--                                        <div class="col-md-6">-->
+<!--                                            <div class="form-group row">-->
+<!--                                                <label class="col-sm-3 col-form-label">Last Assignable Host</label>-->
+<!--                                                <div class="col-sm-9">-->
+<!--                                                    <input class="form-control" id="last_assignable_host" type="text"/>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                        <div class="col-md-6">-->
+<!--                                            <div class="form-group row">-->
+<!--                                                <label class="col-sm-3 col-form-label">Octet 1</label>-->
+<!--                                                <div class="col-sm-9">-->
+<!--                                                    <input class="form-control" id="octet_1" type="text"/>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    <div class="row">-->
+<!--                                        <div class="col-md-6">-->
+<!--                                            <div class="form-group row">-->
+<!--                                                <label class="col-sm-3 col-form-label">Octet 2</label>-->
+<!--                                                <div class="col-sm-9">-->
+<!--                                                    <input class="form-control" id="octet_2" type="text"/>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                        <div class="col-md-6">-->
+<!--                                            <div class="form-group row">-->
+<!--                                                <label class="col-sm-3 col-form-label">Octet 3</label>-->
+<!--                                                <div class="col-sm-9">-->
+<!--                                                    <input class="form-control" id="octet_3" type="text"/>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
 
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="form-group row">
-                                                <label class="col-sm-3 col-form-label">Octet 4</label>
-                                                <div class="col-sm-9">
-                                                    <input class="form-control" id="octet_4" type="text"/>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group row">
-                                                <label class="col-sm-3 col-form-label">Address</label>
-                                                <div class="col-sm-9">
-                                                    <input class="form-control" id="address"
-                                                           type="text"/>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+<!--                                    <div class="row">-->
+<!--                                        <div class="col-md-6">-->
+<!--                                            <div class="form-group row">-->
+<!--                                                <label class="col-sm-3 col-form-label">Octet 4</label>-->
+<!--                                                <div class="col-sm-9">-->
+<!--                                                    <input class="form-control" id="octet_4" type="text"/>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                        <div class="col-md-6">-->
+<!--                                            <div class="form-group row">-->
+<!--                                                <label class="col-sm-3 col-form-label">Address</label>-->
+<!--                                                <div class="col-sm-9">-->
+<!--                                                    <input class="form-control" id="address"-->
+<!--                                                           type="text"/>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
 
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="form-group row">
-                                                <label class="col-sm-3 col-form-label">Subnet Mask</label>
-                                                <div class="col-sm-9">
-                                                    <input class="form-control" id="subnet_mask_binary" type="text"/>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group row">
-                                                <label class="col-sm-3 col-form-label">Wildcard Mask</label>
-                                                <div class="col-sm-9">
-                                                    <input class="form-control" id="wildcard_mask_binary" type="text"/>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+<!--                                    <div class="row">-->
+<!--                                        <div class="col-md-6">-->
+<!--                                            <div class="form-group row">-->
+<!--                                                <label class="col-sm-3 col-form-label">Subnet Mask</label>-->
+<!--                                                <div class="col-sm-9">-->
+<!--                                                    <input class="form-control" id="subnet_mask_binary" type="text"/>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                        <div class="col-md-6">-->
+<!--                                            <div class="form-group row">-->
+<!--                                                <label class="col-sm-3 col-form-label">Wildcard Mask</label>-->
+<!--                                                <div class="col-sm-9">-->
+<!--                                                    <input class="form-control" id="wildcard_mask_binary" type="text"/>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
 
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="form-group row">
-                                                <label class="col-sm-3 col-form-label">Network Address</label>
-                                                <div class="col-sm-9">
-                                                    <input class="form-control" id="network_address_binary"
-                                                           type="text"/>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group row">
-                                                <label class="col-sm-3 col-form-label">Broadcast Address</label>
-                                                <div class="col-sm-9">
-                                                    <input class="form-control" id="broadcast_address_binary"
-                                                           type="text"/>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+<!--                                    <div class="row">-->
+<!--                                        <div class="col-md-6">-->
+<!--                                            <div class="form-group row">-->
+<!--                                                <label class="col-sm-3 col-form-label">Network Address</label>-->
+<!--                                                <div class="col-sm-9">-->
+<!--                                                    <input class="form-control" id="network_address_binary"-->
+<!--                                                           type="text"/>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                        <div class="col-md-6">-->
+<!--                                            <div class="form-group row">-->
+<!--                                                <label class="col-sm-3 col-form-label">Broadcast Address</label>-->
+<!--                                                <div class="col-sm-9">-->
+<!--                                                    <input class="form-control" id="broadcast_address_binary"-->
+<!--                                                           type="text"/>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
 
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="form-group row">
-                                                <label class="col-sm-3 col-form-label">First Assignable Host</label>
-                                                <div class="col-sm-9">
-                                                    <input class="form-control" id="first_assignable_host_binary"
-                                                           type="text"/>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group row">
-                                                <label class="col-sm-3 col-form-label">Last Assignable Host</label>
-                                                <div class="col-sm-9">
-                                                    <input class="form-control" id="last_assignable_host_binary"
-                                                           type="text"/>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+<!--                                    <div class="row">-->
+<!--                                        <div class="col-md-6">-->
+<!--                                            <div class="form-group row">-->
+<!--                                                <label class="col-sm-3 col-form-label">First Assignable Host</label>-->
+<!--                                                <div class="col-sm-9">-->
+<!--                                                    <input class="form-control" id="first_assignable_host_binary"-->
+<!--                                                           type="text"/>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                        <div class="col-md-6">-->
+<!--                                            <div class="form-group row">-->
+<!--                                                <label class="col-sm-3 col-form-label">Last Assignable Host</label>-->
+<!--                                                <div class="col-sm-9">-->
+<!--                                                    <input class="form-control" id="last_assignable_host_binary"-->
+<!--                                                           type="text"/>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
 
-                                </form>
+<!--                                </form>-->
                             </div>
                         </div>
                     </div>
@@ -569,7 +653,164 @@
 
 <script src="../../js/jQuery/jquery-3.6.1.min.js"></script>
 
+<script>
+    function calculate() {
+        // Get input values
+        var ipAddress = document.getElementById("ipAddress").value.trim();
+        var subnetMaskCIDR = parseInt(document.getElementById("subnetMask").value.trim(), 10);
 
+        // ------------------
+
+
+        // Split the IP address into octets
+        var octets = ipAddress.split(".");
+
+        // Convert each octet to binary
+        var binaryOctets = octets.map(function (octet) {
+            return ("00000000" + parseInt(octet).toString(2)).slice(-8);
+        });
+
+        // Join binary octets with dots to form the binary IP address
+        var binaryIpAddress = binaryOctets.join(".");
+
+        // Calculate subnet mask (assuming default /24 subnet)
+        var subnetMask = "255.255.255.0";
+
+        // Validate inputs
+        if (!isValidIpAddress(ipAddress)) {
+            alert("Please enter a valid IP address.");
+            return;
+        }
+
+        if (isNaN(subnetMaskCIDR) || subnetMaskCIDR < 0 || subnetMaskCIDR > 32) {
+            alert("Please enter a valid subnet mask (CIDR notation between 0 and 32).");
+            return;
+        }
+
+        // Calculate subnet details
+        var subnetDetails = calculateSubnetDetails(ipAddress, subnetMaskCIDR);
+
+        // Display results
+        displayResults(subnetDetails);
+
+
+        // ===========
+
+        function calculateSubnetDetails(ipAddress, subnetMaskCIDR) {
+            var ipOctets = ipAddress.split(".");
+            var subnetMaskBinary = generateSubnetMask(subnetMaskCIDR);
+            var subnetMaskDecimal = binaryToDecimal(subnetMaskBinary);
+
+            var networkAddressBinary = calculateNetworkAddress(ipOctets, subnetMaskBinary);
+            var networkAddress = binaryToDecimal(networkAddressBinary);
+
+            var broadcastAddressBinary = calculateBroadcastAddress(ipOctets, subnetMaskBinary);
+            var broadcastAddress = binaryToDecimal(broadcastAddressBinary);
+
+            var numHosts = Math.pow(2, 32 - subnetMaskCIDR) - 2;
+            var numSubnets = Math.pow(2, subnetMaskCIDR - 24);
+
+            var blocksize = Math.pow(2, 32 - subnetMaskCIDR);
+
+            var firstIpAddress = networkAddressBinary.slice(0, -1) + "1";
+            var lastIpAddress = broadcastAddressBinary.slice(0, -1) + "0";
+
+            return {
+                subnetMask: subnetMaskDecimal,
+                networkAddress: ipAddress,
+                broadcastAddress: broadcastAddress,
+                numHosts: numHosts,
+                numSubnets: numSubnets,
+                subnetCIDR: subnetMaskCIDR,
+                networkBits: 32 - subnetMaskCIDR,
+                hostBits: subnetMaskCIDR - 24,
+                blocksize: blocksize,
+                firstIpAddress: binaryToDecimal(firstIpAddress),
+                lastIpAddress: binaryToDecimal(lastIpAddress)
+            };
+        }
+
+        function generateSubnetMask(cidr) {
+            var subnetMask = "";
+            for (var i = 0; i < 32; i++) {
+                subnetMask += (i < cidr) ? "1" : "0";
+            }
+            return subnetMask.match(/.{1,8}/g).map(function (byte) {
+                return parseInt(byte, 2);
+            }).join(".");
+        }
+
+        function binaryToDecimal(binary) {
+            return binary.split(".").map(function (byte) {
+                return parseInt(byte, 2);
+            }).join(".");
+        }
+
+        // update fun to erros / comment the code
+        // <p><strong>New Subnet Mask:</strong> ${subnetDetails.subnetMask}</p>
+        // <p><strong>Broadcast Address:</strong> ${subnetDetails.broadcastAddress}</p>
+        // <p><strong>Last IP Address:</strong> ${subnetDetails.lastIpAddress}</p>
+        // function decimalToBinary(decimal) {
+        //         if (decimal === 0) {
+        //             return "0";
+        //         }
+
+        //         var binary = "";
+        //         while (decimal > 0) {
+        //             binary = (decimal % 2) + binary;
+        //             decimal = Math.floor(decimal / 2);
+        //         }
+
+        //         return binary;
+        //     }
+
+        function calculateNetworkAddress(ipOctets, subnetMaskBinary) {
+            var networkAddressBinary = "";
+            for (var i = 0; i < 4; i++) {
+                networkAddressBinary += (ipOctets[i] & subnetMaskBinary[i]).toString(2).padStart(8, "0");
+                networkAddressBinary += ".";
+            }
+            return networkAddressBinary.slice(0, -1);
+        }
+
+        function calculateBroadcastAddress(ipOctets, subnetMaskBinary) {
+            var broadcastAddressBinary = "";
+            for (var i = 0; i < 4; i++) {
+                broadcastAddressBinary += (ipOctets[i] | ~subnetMaskBinary[i] & 0xFF).toString(2).padStart(8, "0");
+                broadcastAddressBinary += ".";
+            }
+            return broadcastAddressBinary.slice(0, -1);
+        }
+
+        function isValidIpAddress(ipAddress) {
+            var regex = /^(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})$/;
+            var parts = ipAddress.match(regex);
+            return parts && parts.every(function (part) {
+                return parseInt(part, 10) <= 255;
+            });
+        }
+
+        function displayResults(subnetDetails) {
+            var resultsElement = document.getElementById("results");
+            resultsElement.innerHTML =
+                `
+    <h2>Subnet Details:</h2>
+    <p><strong>Network Bits:</strong> ${subnetDetails.subnetCIDR}</p>
+    <p><strong>Binary IP Address:</strong> ${binaryIpAddress}</p>
+    <p><strong>Subnet Mask:</strong> ${subnetMask}</p>
+    <p><strong>Network Address:</strong> ${subnetDetails.networkAddress}</p>
+    <p><strong>Number of Host  Bits:</strong> ${subnetDetails.networkBits}</p>
+    <p><strong>Number of Subnets:</strong> ${subnetDetails.numSubnets}</p>
+    <p><strong>Number of Host Per Subnet:</strong> ${subnetDetails.numHosts}</p>
+    <p><strong>Number of Bits Brrowed For In Host Bits:</strong> ${subnetDetails.hostBits}</p>
+    <p><strong>Block Size:</strong> ${subnetDetails.blocksize}</p>
+    <p><strong>First IP Address:</strong> ${subnetDetails.firstIpAddress}</p>
+
+       `;
+        }
+    }
+
+</script>
 
 <script>
     document.getElementById('logOut3').addEventListener('click', function (event) {
